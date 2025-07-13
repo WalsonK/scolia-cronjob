@@ -1,0 +1,16 @@
+services:
+  cronjob:
+    build: .
+    container_name: cronjob_container
+    volumes:
+      - datas_volume:/app/datas
+    networks:
+      - shared_db_network
+
+networks:
+  shared_db_network:
+    name: shared_db_network
+    external: true
+
+volumes:
+  datas_volume:
