@@ -9,6 +9,7 @@ COPY generate_params.py /app/
 COPY datas/ /app/datas/
 
 RUN mkdir -p datas/logs
+RUN mkdir -p datas/params
 
 # Ajouter un cron job pour exécuter le script tous les soirs à minuit
 RUN apt-get update && apt-get install -y cron && rm -rf /var/lib/apt/lists/*
